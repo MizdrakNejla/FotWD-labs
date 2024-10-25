@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+    <form method="POST">
+        
+        <div>
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name" required size="30">
+        </div>
+        <br>
+        <div>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required size="30">
+        </div>
+        <br>
+        <div>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required size="30">
+        </div>
+        <br>
+        <div>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required size="30">
+        </div>
+        <br>
+        <div>
+            <label for="phone">Phone Number:</label><br>
+            <input type="tel" id="phone" name="phone" required size="30">
+        </div>
+        <br>
+        <div>
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" required min="1" size="5">
+        </div>
+        <br>
+        <div>
+            <label for="gender">Gender:</label><br>
+            <select id="gender" name="gender" required>
+                <option value="">Select...</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <button type="submit">Register</button>
+        </div>
+    </form>
+
+</body>
+</html>

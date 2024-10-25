@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV</title>
+</head>
+<body>
+    <header>
+        <h1>Nejla Mizdrak</h1>
+        <img src="../images/cv.jpg" alt="My CV Picture" width="150" height="150">
+    </header>
+    <hr>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Hello! My name is <strong>Nejla Mizdrak</strong>, and I come from Sarajevo. I am currently a <em>first year</em> student at the 
+            <strong>International Burch University</strong> in the <u>Information Technologies</u> department. I chose this department
+            because I have <em>always</em> been attracted to work in the <u>IT industry</u>.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Education</h2>
+            <ul>
+                <li><strong>Third Gymnasium Sarajevo</strong> - High School Diploma (2020-2024)</li>
+            </ul>
+        </section>
+        <hr>
+        <section>
+            <h2>Programming Languages</h2>
+            <ol>
+                <li>C++</li>
+                <li>Python</li>
+            </ol>
+        </section>
+        <hr>
+        <section>
+            <h2>Projects</h2>
+            <p>Some of my projects include:</p>
+            <ul>
+                <li><strong>Portfolio Website:</strong> A personal website to showcase my work.</li>
+                <li><strong>To-Do List App:</strong> A simple mobile application to manage tasks.</li>
+            </ul>
+        </section>
+        <hr>
+        <section>
+            <h2>Personal Information</h2>
+            <dl>
+                <dt>Full Name</dt>
+                <dd>Nejla Mizdrak</dd>
+                <dt>Email</dt>
+                <dd>nejla.mizdrak@stu.ibu.edu.ba</dd>
+                <dt>Location</dt>
+                <dd>Sarajevo, Bosnia and Herzegovina</dd>
+            </dl>
+        </section>
+        <hr>
+        <section>
+            <h2>Geolocation</h2>
+            <button id="getLocationButton">Get My Location</button>
+            <p id="locationDisplay"></p>
+        </section>
+        <hr>
+        <section>
+            <h2>Quote</h2>
+            <blockquote>
+                "It always seems impossible until it’s done." - <cite>Nelson Mandela</cite>
+            </blockquote>
+        </section>
+        <hr>
+        <section>
+            <h2>References</h2>
+            <p>For more additional information, visit my <a href="https://github.com/MizdrakNejla" target="_blank">GitHub profile</a>.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>Contact Me</h2>
+            <p>If you would like to get in touch, feel free to email me at <a href="mailto:nejla.mizdrak@stu.ibu.edu.ba">nejla.mizdrak@stu.ibu.edu.ba</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        <p>&copy; 2024 Nejla Mizdrak</p>
+    </footer>
+
+    <script>
+        document.getElementById('getLocationButton').addEventListener('click', () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById('locationDisplay').textContent = "Geolocation is not supported by this browser.";
+            }
+        });
+
+        function showPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            document.getElementById('locationDisplay').textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById('locationDisplay').textContent = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById('locationDisplay').textContent = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById('locationDisplay').textContent = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById('locationDisplay').textContent = "An unknown error occurred.";
+                    break;
+            }
+        }
+    </script>
+
+</body>
+</html>

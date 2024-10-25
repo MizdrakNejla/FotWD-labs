@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills</title>
+</head>
+<body>
+
+    <h2>Drag and Drop Your Skills</h2>
+    
+    <div id="skillsList">
+        <p class="draggable" draggable="true" 
+           style="padding: 10px; margin: 5px; border: 1px solid #ccc; cursor: grab;">
+           HTML
+        </p>
+        <p class="draggable" draggable="true" 
+           style="padding: 10px; margin: 5px;border: 1px solid #ccc; cursor: grab;">
+           CSS
+        </p>
+        <p class="draggable" draggable="true" 
+           style="padding: 10px; margin: 5px;border: 1px solid #ccc; cursor: grab;">
+           JavaScript
+        </p>
+        <p class="draggable" draggable="true" 
+           style="padding: 10px; margin: 5px;border: 1px solid #ccc; cursor: grab;">
+           Python
+        </p>
+    </div>
+
+    <div id="dropArea" 
+         style="border: 2px dashed #ccc; padding: 20px; min-height: 100px; margin-top: 20px;">
+        Drop your skills here
+    </div>
+
+    <script>
+        const draggables = document.querySelectorAll('.draggable');
+        const dropArea = document.getElementById('dropArea');
+
+        draggables.forEach(draggable => {
+            draggable.addEventListener('dragstart', () => {
+                draggable.classList.add('dragging');
+            });
+
+            draggable.addEventListener('dragend', () => {
+                draggable.classList.remove('dragging');
+            });
+        });
+
+        dropArea.addEventListener('dragover', (event) => {
+            event.preventDefault(); 
+        });
+
+        dropArea.addEventListener('drop', (event) => {
+            const dragging = document.querySelector('.dragging');
+            dropArea.appendChild(dragging); 
+
+        });
+    </script>
+
+</body>
+</html>
